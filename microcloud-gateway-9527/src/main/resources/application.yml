@@ -1,0 +1,36 @@
+server:
+  port: 9527
+
+
+#服务名    
+spring:
+  application:
+    name: gateway-service
+  cloud: 
+    gateway:
+ #     httpclient:                   #超时配置
+  #      connect-timeout: 1000
+   #     response-timeout: 5s       http://localhost:9527/mm/dept/get/1
+      routes:
+      - id: mydept
+        uri: lb://MICROCLOUD-DEPT/
+        filters: 
+#        - AddRequestHeader=Authorization, Java:mixiaodong
+        - StripPrefix=1
+        predicates:
+        - Path=/mm/**
+          
+
+eureka: 
+  client:
+    service-url: 
+      defaultZone: http://mxdEureka:mxdEureka@eureka7001.com:7001/eureka/,http://mxdEureka:mxdEureka@eureka7002.com:7002/eureka/,http://mxdEureka:mxdEureka@eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+
+info: 
+  app.name: MiXiaoDong-microcloud
+  company.name: www.hdu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

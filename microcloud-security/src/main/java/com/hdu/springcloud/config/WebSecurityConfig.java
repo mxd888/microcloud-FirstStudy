@@ -24,7 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// inMemoryAuthentication 从内存中获取
 		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("Java")
-				.password(new BCryptPasswordEncoder().encode("mixiaodong")).roles("USER");
+				.password(new BCryptPasswordEncoder().encode("mixiaodong")).roles("USER").and().withUser("Java")
+				.password(new BCryptPasswordEncoder().encode("mixiaodong")).roles("ACTUATOR");		//当服务总线需要密码时的角色
 
 	}
 

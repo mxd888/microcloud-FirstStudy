@@ -1,26 +1,23 @@
 package com.hdu.springcloud.rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hdu.springcloud.bean.TestBean;
 
 @RestController
 public class ConfigClientRest {
 
-	@Value("${spring.application.name}")
-	private String applicationName;
-	
-	@Value("${eureka.client.service-url.defaultZone}")
-	private String eurekaServers;
-	
-	@Value("${server.port}")
-	private String port;
+	@Autowired
+	private TestBean testbean;
 	
 	@GetMapping("/config")
 	public String getconfig() {
-		String string="application:"+applicationName+"\t eurekaServers:"+eurekaServers
-				+"\t server.port"+port;
+		String string="application:"+testbean.getApplicationName()+"\t eurekaServers:"+testbean.getEurekaServers()
+				+"\t server.port"+testbean.getPort();
 		System.out.println("*****"+string);
 		return string;
 	}

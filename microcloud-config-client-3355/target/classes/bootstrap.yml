@@ -1,8 +1,20 @@
 spring:
+  rabbitmq:         #现在将集成rabbitMQ作为消息服务总线
+    host: mybroker.com #rabbitMQ主机服务地址
+    port: 5672  #端口
+    username: mxd
+    password: password
   cloud:
     config:
       name: microloud-config-client    #从Github上读取的资源名称，注意没有yml后缀名
       profile: dev              #本次访问的配置项
       label: master
-      uri: http://localhost:3344   #本微服务启动后先去找3344号服务，通过springcloudconfig获取GitHub的服务地址
+      uri: http://localhost:3355   #本微服务启动后先去找3344号服务，通过springcloudconfig获取GitHub的服务地址
       
+              #变成：http://localhost:8888/actuator/bus-refresh
+              #curl -X POST http://localhost:3355/actuator/bus-refresh
+management:   #注意：config-server和config-client的配置都得加上  
+  endpoints: 
+    web:
+      exposure:
+        include: bus-refresh  

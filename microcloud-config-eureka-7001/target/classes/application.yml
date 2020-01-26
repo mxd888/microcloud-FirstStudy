@@ -1,0 +1,25 @@
+#spring:
+ # cloud:
+  #  config:
+   #   name: microcloud-config-eureka-client    #从Github上读取的资源名称，注意没有yml后缀名
+    #  profile: test              #本次访问的配置项
+     # label: master
+      #uri: http://localhost:3344   #本微服务启动后先去找3344号服务，通过springcloudconfig获取GitHub的服务地址
+server:
+  port: 7001
+spring:
+  application:
+    name: microcloud-config-eureka-client
+
+
+eureka: 
+  instance:
+    hostname: eureka7001.com  #eureka服务端的实例名
+  client: 
+    register-with-eureka: false #false表示不向eureka注册自己
+    fetch-registry: false #false表示自己就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka/
+   
+  server:
+    peer-node-read-timeout-ms: 60000    #那个节点出现 Read timed out。只需要加上这句话即可解决

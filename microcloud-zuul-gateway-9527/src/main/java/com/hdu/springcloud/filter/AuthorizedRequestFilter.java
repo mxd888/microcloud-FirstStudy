@@ -3,7 +3,6 @@ package com.hdu.springcloud.filter;
 import java.nio.charset.Charset;
 import java.util.Base64;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;

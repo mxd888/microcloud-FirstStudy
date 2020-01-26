@@ -9,6 +9,15 @@
 	</parent>
 	<artifactId>microcloud-config-client-3355</artifactId>
 	<dependencies>
+	<!-- RabbitMQ只要包含rabbitMQ的所有微服务必须都添加该依赖 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
