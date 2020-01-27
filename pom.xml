@@ -7,9 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
+		<!-- 我已经在maven默认配置文件中设置了jdk版本。则再次没做完整的jdk版本引入 -->
+		<!-- 没有设置的也可以设置一下两条即可-->
+		<!-- <maven.compiler.source>1.8</maven.compiler.source> 
+	 			<maven.compiler.target>1.8</maven.compiler.target> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.version>5.5.2</junit.version>
 		<log4j.version>2.12.1</log4j.version>
 		<lombok.version>1.18.10</lombok.version>
@@ -26,13 +28,9 @@
 				<scope>import</scope>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
-			<!-- <dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Greenwich.SR3</version>
-				<type>pom</type>
-				<scope>runtime</scope>
-			</dependency> -->
+			<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-dependencies</artifactId> 
+				<version>Greenwich.SR3</version> <type>pom</type> <scope>runtime</scope> 
+				</dependency> -->
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -45,13 +43,8 @@
 
 
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
-			<!-- <dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.2.4.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency> -->
+			<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-dependencies</artifactId> 
+				<version>2.2.4.RELEASE</version> <type>pom</type> <scope>import</scope> </dependency> -->
 			<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 			<dependency>
 				<groupId>mysql</groupId>
