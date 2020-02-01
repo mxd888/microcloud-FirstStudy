@@ -1,8 +1,13 @@
 server:
   port: 3355
   
-spring:
-  application:
+spring: 
+ # security:     #无法通过在yml设置csrf为disable. 所以通过外设security的jar包。
+  #  user: 
+   #   name: configBus
+    #  password: mixiaodong
+     # roles: ACTUATOR
+  application: 
     name: microcloud-config
   rabbitmq:         #现在将集成rabbitMQ作为消息服务总线      http://localhost:15672/
     host: mybroker.com #rabbitMQ主机服务地址
@@ -16,7 +21,7 @@ spring:
           uri: https://github.com/mxd888/microcloud-conf.git #为公共仓库，如果某些信息找不到了就是用他
           
                 #变成：http://localhost:8888/actuator/bus-refresh
-                #curl -X POST http://localhost:3355/actuator/bus-refresh
+                #curl -X POST http://configBus:mixiaodong@localhost:3355/actuator/bus-refresh
 management:     #注意：config-server和config-client的配置都得加上  
   endpoints: 
     web:

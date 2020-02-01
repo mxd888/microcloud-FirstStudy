@@ -134,5 +134,6 @@
 		<module>microcloud-consumer-upload-80</module>
 		<module>microcloud-gateway-9527</module>
 		<module>microcloud-config-bus-7201</module>
+		<module>microcloud-config-bus-security</module>
 	</modules>
 </project>

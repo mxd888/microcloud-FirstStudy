@@ -9,15 +9,16 @@
 	</parent>
 	<artifactId>microcloud-config-client-3355</artifactId>
 	<dependencies>
-	<!-- RabbitMQ只要包含rabbitMQ的所有微服务必须都添加该依赖 -->
+	
+		<!-- RabbitMQ只要包含rabbitMQ的所有微服务必须都添加该依赖 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
-		 <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -27,7 +28,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		
+
 		<!-- 引入web相关配置，并且排除Tomcat -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
